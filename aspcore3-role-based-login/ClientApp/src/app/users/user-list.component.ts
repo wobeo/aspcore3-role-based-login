@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { User } from './user';
 import { UserService } from './user.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
     selector: 'app-userlist',
@@ -19,7 +20,7 @@ export class UserListComponent implements OnInit {
     // pagination
     p: number = 1;
 
-    constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, private authService: AuthService) { }
 
     // comment reutiliser ? (aussi present dans edit)
     getConfirmedText(confirmed: boolean) {

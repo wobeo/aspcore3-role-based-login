@@ -12,6 +12,7 @@ import { UserViewComponent } from './user-view.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AuthService } from '../auth/auth.service';
 
 @NgModule({
     declarations: [
@@ -28,8 +29,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
         NgxPaginationModule,
         Ng2SearchPipeModule
     ],
-    providers: [
-        UserService,
+  providers: [
+      AuthService,
+      UserService,
     ]
 })
 
