@@ -1,0 +1,56 @@
+<div class="container" style="margin-bottom:20px;padding-top:20px;">
+  <div class="row">
+    <div class="col-sm-12 btn btn-success">
+      User's Information
+    </div>
+  </div>
+  <div class="col-sm-12" style="margin-bottom:20px;padding-top:20px;">
+    <div class="row">
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-primary" data-toggle="modal" routerLink="/user/add">
+          Add New User
+        </button>
+      </div>
+      <div class="col-sm-6">
+        <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Search">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="padding-top:20px;">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <th>LastName</th>
+    <th>FirstName</th>
+    <th>Password</th>
+    <th>Mail</th>
+    <th>Role</th>
+    <th>Confirmed</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+      <!--<tr *ngFor="let u of U | async |filter:filter | paginate: { itemsPerPage: 5, currentPage: p } ; let i=index">-->
+      <tr *ngFor="let u of U | async | filter:filter | paginate: { itemsPerPage: 5, currentPage: p } ; let i=index">
+        <!--<tr *ngFor="let u of U | async; let i=index">-->
+        <td><a routerLink="/user/{{u.Id}}">{{u.LastName}}</a></td>
+        <td>{{u.FirstName}}</td>
+        <td>{{u.Password}}</td>
+        <td>{{u.Mail}}</td>
+        <td>{{u.Level}}</td>
+        <td>{{getConfirmedText(u.Confirmed)}}</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary mr-1" (click)="UserView(u.Id)">View</button>
+            <button type="button" class="btn btn-primary mr-1" (click)="UserEdit(u.Id)">Edit</button>
+            <button type="button" class="btn btn-danger mr-1" (click)="DeleteUser(u.Id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <ul class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </ul>
+  
+</div>

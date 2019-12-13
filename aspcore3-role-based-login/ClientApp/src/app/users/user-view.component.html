@@ -1,0 +1,57 @@
+<div class="container" style="padding-top:20px;">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <div class="card mx-4">
+        <div class="card-head p-4">
+          <div class="col-sm-12 btn btn-success">
+            User's Information
+          </div>
+        </div>
+        <div class="card-body p-4">
+            <div class="col-sm-12 text-right">
+              <button type="button" class="btn btn-primary mr-1" (click)="UserEdit(U.Id)">{{ submitText}}</button>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-4">Name</div>
+                  <div class="col-8"> {{U.Name}} </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">LastName</div>
+                  <div class="col-8"> {{U.LastName}} </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">FirstName</div>
+                  <div class="col-8"> {{U.FirstName}} </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">Password</div>
+                  <div class="col-8"> {{U.Password}} </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">Mail</div>
+                  <div class="col-8"> {{U.Mail}} </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">Role</div>
+                  <div class="col-8"> {{U.Level}} </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">Confirmed</div>
+                  <div class="col-8"> {{getConfirmedText(U.Confirmed)}} </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

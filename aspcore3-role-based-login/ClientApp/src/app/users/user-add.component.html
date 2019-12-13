@@ -1,0 +1,84 @@
+<div class="container" style="padding-top:20px;">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <div class="card mx-4">
+        <div class="card-head p-4">
+          <div class="col-sm-12 btn btn-success">
+            User's Information
+          </div>
+        </div>
+        <div class="card-body p-4">
+          <form [formGroup]="AddUser" (ngSubmit)="onFormSubmit(AddUser.value)">
+            <div class="col-sm-12">
+              <div class="card-body">
+                <!-- <div class="row"> -->
+                <div class="form-group ">
+                  <label class="col-sm-2 control-label" for="Name">Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Enter name"
+                           formControlName="Name">
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label class="col-sm-2 control-label" for="Password">Password</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Enter Password"
+                           formControlName="Password">
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label class="col-sm-2 control-label" for="Mail">Mail</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Enter Mail"
+                           formControlName="Mail">
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label class="col-sm-2 control-label" for="FirstName">FirstName</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Enter firstname"
+                           formControlName="FirstName">
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label class="col-sm-2 control-label" for="LastName">LastName</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Enter lastnamename"
+                           formControlName="LastName">
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label class="col-sm-2 control-label" for="Level">Role</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" formControlName="Level">
+                      <option>Please Choose&hellip;</option>
+                      <option value="guest">Guest</option>
+                      <option value="client">Client</option>
+                      <option value="vendor">Vendor</option>
+                      <option value="partner">Partner</option>
+                      <option value="marketer">Marketer</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                  </div>
+
+                </div>
+                <div class="form-group ">
+                  <div class="col-sm-10">
+                    <label>
+                      <input type="checkbox" formControlName="Confirmed" ng-model="u.Confirmed" ng-true-value="true" ng-false-value="false">
+                      Confirmed ?
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 text-right">
+              <button class="btn btn-default px-10" type="reset" (click)="clearForm()">Clear Form</button>
+              <button class="btn btn-primary px-10" type="submit">{{this.submitText}}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
