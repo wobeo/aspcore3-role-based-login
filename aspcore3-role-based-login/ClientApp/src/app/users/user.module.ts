@@ -29,7 +29,14 @@ import { AuthService } from '../auth/auth.service';
         NgxPaginationModule,
         Ng2SearchPipeModule
     ],
-  providers: [
+    exports: [
+      UserRoutingModule,
+      UserListComponent,
+      UserAddComponent,
+      UserEditComponent,
+      UserViewComponent
+    ],
+    providers: [
       AuthService,
       UserService,
     ]

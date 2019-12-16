@@ -13,4 +13,5 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  get isAdmin() { return this.authService.isAdmin(); }
 }
